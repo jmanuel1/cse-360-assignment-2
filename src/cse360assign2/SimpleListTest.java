@@ -19,17 +19,21 @@ import static org.junit.Assert.*;
 public class SimpleListTest {
     private SimpleList testList;
 
+    // creates a new SimpleList before each test
     @Before
     public void createSimpleList() {
         testList = new SimpleList();
     }
 
+    // tests that adding an element increases the count of the list by 1
     @Test
     public void addToIncreaseCount() {
         testList.add(42);
         assertEquals(1, testList.count());
     }
 
+    // tests that elements can be added past the list's initial capacity (which
+    // is 10)
     @Test
     public void addPastInitialCapacity() {
         for (int iteration = 0; iteration < 20; iteration++) {
@@ -38,6 +42,8 @@ public class SimpleListTest {
         assertEquals(20, testList.count());
     }
 
+    // tests that removing an element decreases the count of the list by one if
+    // the element is in the list
     @Test
     public void remove() {
         testList.add(42);
