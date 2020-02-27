@@ -85,4 +85,9 @@ public class SimpleList {
         }
         return indexOfElement;
     }
+
+    public void append(int element) {
+        expandIfNeeded();
+        list[count++] = element;
+    }
 }
