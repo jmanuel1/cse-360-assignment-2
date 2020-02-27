@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 /**
  * Contains JUnit tests of the SimpleTest class. The functionality tested is
- * described in the assignment description.
+ * described in the assignment descriptions for assignments 1 and 2.
  *
  * @see SimpleList
  */

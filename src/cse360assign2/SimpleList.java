@@ -8,9 +8,10 @@ package cse360assign2;
 
 /**
  * Implements a list of integers backed by an array. Supports adding and
- * removing integers, searching for the first occurrence of an integer, and
- * retrieving the current number of elements in the list. The maximum size of
- * the list is ten.
+ * removing integers, searching for the first occurrence of an integer, 
+ * accessing the first and last elements of the list, and retrieving the 
+ * current number of elements in the list. The internal size of the array 
+ * adjusts based on the size of the list.
  */
 public class SimpleList {
     private int[] list;
