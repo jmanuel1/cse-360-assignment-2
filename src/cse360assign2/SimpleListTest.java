@@ -98,4 +98,49 @@ public class SimpleListTest {
     public void createEmptySimpleList() {
         assertEquals(0, testList.count());
     }
+
+    @Test
+    public void appendToIncreaseCount() {
+        testList.append(42);
+        assertEquals(1, testList.count());
+    }
+
+    @Test
+    public void getFirstOfEmptyList() {
+        assertEquals(SimpleList.NOT_FOUND, testList.first());
+    }
+
+    @Test
+    public void getFirstOfNonEmptyList() {
+        testList.append(42);
+        assertEquals(42, testList.first());
+    }
+
+    @Test
+    public void getLastOfEmptyList() {
+        assertEquals(SimpleList.NOT_FOUND, testList.last());
+    }
+
+    @Test
+    public void getLastOfNonEmptyList() {
+        testList.append(42);
+        assertEquals(42, testList.last());
+    }
+
+    @Test
+    public void shrinkListALot() {
+        for (int iteration = 0; iteration < 10; iteration++) {
+            testList.remove(0);
+        }
+        assertEquals(0, testList.size());
+    }
+
+    @Test
+    public void removeWithoutShrinking() {
+        for (int iteration = 0; iteration < 10; iteration++) {
+            testList.append(0);
+        }
+        testList.remove(0);
+        assertEquals(9, testList.size());
+    }
 }
