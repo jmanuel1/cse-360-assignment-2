@@ -42,6 +42,15 @@ public class SimpleList {
             System.arraycopy(list, index + 1, list, index, copyLength);
             count--;
         }
+
+        if (count / (float) list.length < 0.75) {
+            int newCapacity = (int) (list.length * 0.75);
+            if (newCapacity >= 1) {
+                int[] copy = new int[newCapacity];
+                System.arraycopy(list, 0, copy, 0, count);
+                list = copy;
+            }
+        }
     }
 
     public int count() {
