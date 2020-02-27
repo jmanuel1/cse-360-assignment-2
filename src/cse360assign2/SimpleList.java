@@ -106,4 +106,8 @@ public class SimpleList {
         }
         return last;
     }
+
+    public int size() {
+        return list.length;
+    }
 }
