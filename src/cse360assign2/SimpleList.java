@@ -24,15 +24,23 @@ public class SimpleList {
     }
 
     public void add(int newElement) {
+        expandIfNeeded();
+
+        System.arraycopy(list, 0, list, 1, list.length - 1);
+        list[0] = newElement;
+        count++;
+    }
+
+    /**
+     * Adds 50% to the capacity of the internal array by reallocation if the array
+     * is full.
+     */
+    private void expandIfNeeded() {
         if (count == list.length) {
             int[] copy = new int[(int) (list.length * 1.5)];
             System.arraycopy(list, 0, copy, 0, list.length);
             list = copy;
         }
-
-        System.arraycopy(list, 0, list, 1, list.length - 1);
-        list[0] = newElement;
-        count++;
     }
 
     public void remove(int element) {
