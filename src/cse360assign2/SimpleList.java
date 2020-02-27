@@ -1,8 +1,8 @@
 // Name: Jason Manuel
 // Class ID: 164
-// Assignment number: 1
+// Assignment number: 2
 // Description: A simple array-backed list class which supports adding,
-//  searching for, and removing integers.
+//  searching for, accessing first and last, and removing integers.
 
 package cse360assign2;
 
