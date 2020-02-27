@@ -90,12 +90,20 @@ public class SimpleList {
         expandIfNeeded();
         list[count++] = element;
     }
-    
+
     public int first() {
         int first = -1;
         if (count > 0) {
             first = list[0];
         }
         return first;
+    }
+
+    public int last() {
+        int last = -1;
+        if (count > 0) {
+            last = list[count - 1];
+        }
+        return last;
     }
 }
