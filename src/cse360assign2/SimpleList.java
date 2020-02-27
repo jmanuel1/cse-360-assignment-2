@@ -37,7 +37,7 @@ public class SimpleList {
      */
     private void expandIfNeeded() {
         if (count == list.length) {
-            int[] copy = new int[(int) (list.length * 1.5)];
+            int[] copy = new int[list.length + list.length / 2];
             System.arraycopy(list, 0, copy, 0, list.length);
             list = copy;
         }
@@ -51,8 +51,10 @@ public class SimpleList {
             count--;
         }
 
-        if (count / (float) list.length < 0.75) {
-            int newCapacity = (int) (list.length * 0.75);
+        // this tests if count/list.length < 0.75, but using only integer
+        // arithmetic
+        if (count * 4 < list.length * 3) {
+            int newCapacity = (int) (list.length * 3 / 4);
             if (newCapacity >= 1) {
                 int[] copy = new int[newCapacity];
                 System.arraycopy(list, 0, copy, 0, count);
