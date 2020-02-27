@@ -108,6 +108,7 @@ public class SimpleList {
     }
 
     public int size() {
-        return list.length;
+        // seems to be the same as count, according to a TA
+        return count;
     }
 }
